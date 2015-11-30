@@ -4,7 +4,7 @@ set -e
 function setConfiguration() {
   KEY=$1
   VALUE=$2
-  sed -i "s/url.*$KEY/url: $VALUE/g" /usr/share/grafana/config.js
+  sed -i "s/url.*$KEY/url: '$VALUE'/g" /usr/share/grafana/config.js
 }
 
 if [ -n "${GRAPHITE_URL+1}" ]; then
